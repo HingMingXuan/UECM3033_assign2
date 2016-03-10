@@ -10,12 +10,15 @@ def LUdecomp(A):
                 A[i, k+1:n] = A[i, k+1:n] - lam * A[k, k+1:n]
                 A[i, k] = lam
         return A
+        
+    #find omega
 def omegafind(A,D):
     K = np.linalg.inv(D).dot(D-A)
     eig = max(np.linalg.eigvals(K));
     omega = 2*(1-np.sqrt(1-eig**2))/eig**2
     return omega;
     
+    #LU
 def lu(A, b):
       A=LUdecomp(A)
       n = len(A)
@@ -26,6 +29,7 @@ def lu(A, b):
            b[k] = (b[k] - np.dot(A[k,k+1:n], b[k+1:n]))/A[k,k]
       return b
 
+    #SOR
 def sor(A, b):
     sol = []
     D = np.zeros_like(A)
@@ -38,6 +42,7 @@ def sor(A, b):
             x[j] = x[j] + omega*(b[j]-sums)/A[j,j]
     return list(sol)
 
+    #condition
 def solve(A, b):
     condition = False
     try:       
