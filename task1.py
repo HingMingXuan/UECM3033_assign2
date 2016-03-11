@@ -18,7 +18,7 @@ def omegafind(A,D):
     omega = 2*(1-np.sqrt(1-eig**2))/eig**2
     return omega;
     
-    #LU
+    #lU
 def lu(A, b):
       A=LUdecomp(A)
       n = len(A)
