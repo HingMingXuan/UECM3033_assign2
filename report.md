@@ -34,7 +34,7 @@ Results: Both matrices solved by LU decomposition method. The first matrix given
 
 Put here your picture file (image.png)
 
-![image.jpeg](image.jpeg)
+![image.png](image.png)
 
 How many non zero element in $\Sigma$? 
 
